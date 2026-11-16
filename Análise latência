@@ -1,0 +1,53 @@
+
+# Inicialização das variáveis
+soma = 0
+maior = 0
+contador = 0
+i = 1
+
+# Ler 10 medições válidas
+while i <= 10:
+
+    try:
+        latencia = float(input(
+            f"Introduza a latência {i} (ms): "
+        ))
+
+    except ValueError:
+        print("Erro! Introduza um número válido.")
+        continue
+
+    # Validar valores negativos
+    if latencia < 0:
+        print("Erro! A latência não pode ser negativa.")
+        continue
+
+    # Totalizador
+    soma = soma + latencia
+
+    # Encontrar o maior valor
+    if latencia > maior:
+        maior = latencia
+
+    # Contar valores superiores a 100 ms
+    if latencia > 100:
+        contador = contador + 1
+
+    # Avançar para a próxima medição
+    i = i + 1
+
+# Calcular a média
+media = soma / 10
+
+# Avaliar a qualidade do sinal
+if contador == 0:
+    resultado = "BOM SINAL"
+else:
+    resultado = "SINAL COM LATÊNCIA ELEVADA"
+
+# Apresentar resultados
+print("\n--- RESULTADOS ---")
+print(f"Média: {media:.2f} ms")
+print(f"Maior valor: {maior:.2f} ms")
+print(f"Valores acima de 100 ms: {contador}")
+print(f"Resultado: {resultado}")
