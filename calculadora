@@ -1,0 +1,37 @@
+
+while True:
+    print("\n=== CALCULADORA SIMPLES ===")
+
+    num1 = float(input("Primeiro número: "))
+    num2 = float(input("Segundo número: "))
+
+    print("1 - Somar")
+    print("2 - Subtrair")
+    print("3 - Multiplicar")
+    print("4 - Dividir")
+
+    opcao = input("Escolhe uma opção: ")
+
+    if opcao == "1":
+        print("Resultado:", num1 + num2)
+
+    elif opcao == "2":
+        print("Resultado:", num1 - num2)
+
+    elif opcao == "3":
+        print("Resultado:", num1 * num2)
+
+    elif opcao == "4":
+        if num2 != 0:
+            print("Resultado:", num1 / num2)
+        else:
+            print("Erro: divisão por zero!")
+
+    else:
+        print("Opção inválida!")
+
+    voltar = input("\nVoltar ao início? (s/n): ")
+
+    if voltar.lower() != "s":
+        print("Programa terminado!")
+        break
